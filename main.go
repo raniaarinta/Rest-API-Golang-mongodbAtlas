@@ -266,7 +266,7 @@ func getTour(response http.ResponseWriter, request *http.Request)    {}
 func main() {
 	fmt.Println("Starting the application...")
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	string_conection_db := "mongodb+srv://<username>:<password>@<cluster_name>/<db_name>?retryWrites=true&w=majority"
+	string_conection_db := "mongodb://<username>:<password>@<cluster_name>/<db_name>"
 	clientOptions := options.Client().ApplyURI(string_conection_db)
 	client, _ = mongo.Connect(ctx, clientOptions)
 	router := mux.NewRouter()
